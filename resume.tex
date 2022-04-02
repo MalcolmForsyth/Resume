@@ -1,0 +1,193 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% Website: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[backend=biber,style=authoryear,sorting=nyt,
+	natbib=true,maxbibnames=99,firstinits=true,uniquename=false]{biblatex}
+\addbibresource{cv.bib}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\makeauthorbold}[1]{%
+  \DeclareNameFormat{author}{%
+    \ifthenelse{\value{listcount}=1}
+    {%
+      {\expandafter\ifstrequal\expandafter{\namepartfamily}{#1}{\mkbibbold{\namepartfamily\addcomma\addspace \namepartgiveni}}{\namepartfamily\addcomma\addspace \namepartgiveni}}
+      %
+    }{\ifnumless{\value{listcount}}{\value{liststop}}
+        {\expandafter\ifstrequal\expandafter{\namepartfamily}{#1}{\mkbibbold{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni}}{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni}}
+        {\expandafter\ifstrequal\expandafter{\namepartfamily}{#1}{\mkbibbold{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni\addcomma\isdot}}{\addcomma\addspace \namepartfamily\addcomma\addspace \namepartgiveni\addcomma\isdot}}%
+      }
+    \ifthenelse{\value{listcount}<\value{liststop}}
+    {\addcomma\space}{}
+  }
+}
+\makeauthorbold{Forsyth}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=1mm]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[rightmargin=11.5mm]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{http://sourabhbajaj.com/}{\Large Malcolm Forsyth}} & Email : \href{mailto:jmalcolmforsyth@gmail.com}{jmalcolmforsyth@gmail.com}\\
+  \href{https://github.com/MalcolmForsyth/}{https://github.com/MalcolmForsyth} & Mobile : 217-372-0280 \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+  \renewcommand\labelitemi{}
+    \resumeSubheading
+      {University of Illinois at Urbana-Champaign}{Urbana, IL}
+      {BS Computer Science \& BA Mathematics;  GPA: 3.95}{Aug. 2020 -- May. 2024}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience} 
+  \resumeSubHeadingListStart
+    \renewcommand\labelitemi{}
+    \resumeSubheading
+      {Ameren}{St. Louis, MO}
+      {Software Engineering Intern}{June 2021 - Present}
+      \resumeItemListStart
+        \resumeItem{Data Parsing}
+          {Developed an automatic data collector and processor for my team's automation report using vRealize Orchestrator, updating from 252 different data sources}
+        \resumeItem{Ansible API}
+          {Used Flask framework to create an encrypted system-to-system command scheduler for Ansible playbooks, with a queueing system for up to 100 users}
+        \resumeItem{File Rotation} {Expanded a file rotation system to archive old documents, alleviating manual review}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {University of Chicago}{Chicago, IL}
+      {Data Science Intern}{May 2021 - June 2021}
+      \resumeItemListStart
+        \resumeItem{Image Transformation}
+          {Implemented the UNet Convolutional Neural Network architecture to transform biopsy images from phase space to stained, training on 50000 examples and optimizing 20 hyperparameters}
+        \resumeItem{Data Analysis}
+          {Analyzed the model using the CT-Fire program to confirm no performance loss transformations, demonstrated using the PSNR, SSIM, and Pearson statistics}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------Research-----------------
+\section{Research}
+  \resumeSubHeadingListStart
+\renewcommand\labelitemi{}
+    \resumeSubheading
+      {Carl R. Woose Institute for Genomic Biology}{Champaign, IL}
+      {Undergraduate Researcher}{February 2021 - Present}
+      \resumeItemListStart
+        \resumeItem{BERT for Protein Analysis}
+          {Using the Transformer architecture, trained Natural Language Processing models on 150 million sequences of proteins to learn high-level features} \citep{sanborn_learning_2014}
+        \resumeItem{Regression Networks}
+          {Fine-tuned regression heads onto existing models for degree prediction tasks to demonstrate the efficacy of byte-pair encoding}
+        \resumeItem{Model Interpretability} {Verified biological trends that models learn by mapping attention layers against sequences}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {UIUC Biosensors Lab}{Champaign, IL}
+      {Undergraduate Researcher}{October 2020 - December 2020}
+      \resumeItemListStart
+        \resumeItem{Covid-19 Survey}
+          {Launched a website through my school's PrairieLearn software to analyze the results of a 100,000 participant study about the effects of Covid-19 on taste and smell}
+        \resumeItem{Spectral Camera Interpolation}
+          {On an ultraviolet and RGB camera, added a machine learning approach to pixel interpolation for hidden pixels using vision transformers and convolutional neural networks.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+ 
+%-----------PUBLICATIONS-----------------
+\printbibliography[title=Publications]
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+
+  \resumeSubHeadingListStart
+  \renewcommand\labelitemi{}
+    \resumeSubItem{S\&P 500 Correlation Graph}
+      {Decomposed the S\&P 500 index using spearman coefficients to compare against human-labeled sectors}
+    \resumeSubItem{Drumkit Application}
+      {An audio production style app built in C++ using the Cinder library to record drum tracks}
+%     \resumeSubItem{Mac Setup}
+%       {Book that gives step by step instructions on setting up developer environment on Mac OS.}
+  \resumeSubHeadingListEnd
+
+%
+%--------PROGRAMMING SKILLS------------
+\section{Skills}
+ \resumeSubHeadingListStart
+ \renewcommand\labelitemi{}
+   \resumeSubItem{Highly Skilled in}{: Python, Javascript, C++}
+   \resumeSubItem{Proficient in}{: Java, Rust, C, Matlab}
+   \resumeSubItem{Technologies \& Libraries}{: AWS, Pytorch, React, Tensorflow, Flask}
+ \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
